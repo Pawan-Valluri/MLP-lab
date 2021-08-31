@@ -1,0 +1,453 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "MLP_Lab_External_16_8_2021.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "JQMQ-QigQFsK"
+      },
+      "source": [
+        "## Write a program for implementing Dictionaries"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "csF2pOABQMR9",
+        "outputId": "a4ae2d0b-3523-4fad-eb9c-d1147e88cec6"
+      },
+      "source": [
+        "dictn = {\"01\":\"Aditya\", \"14\":\"Rohan\", \"33\":\"Ashritha\", \"53\":\"Pawan Valluri\"}\n",
+        "print(dictn)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{'01': 'Aditya', '14': 'Rohan', '33': 'Ashritha', '53': 'Pawan Valluri'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qewq5qsYSkxP",
+        "outputId": "d830fe76-ca30-4f6d-c427-05d54c1cc630"
+      },
+      "source": [
+        "# Listing out the keys of the dictionary\n",
+        "keys = list(dictn.keys())\n",
+        "print(keys)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "['01', '14', '33', '53']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2l6C6PvZSku1",
+        "outputId": "ca0419b4-e0ed-424c-b897-904aea5b3c30"
+      },
+      "source": [
+        "# Listing outthe values of the dictionary\n",
+        "values = list(dictn.values())\n",
+        "print(values)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "['Aditya', 'Rohan', 'Ashritha', 'Pawan Valluri']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NvalVP9bSkkg"
+      },
+      "source": [
+        "# Adding Entries to the dictionary\n",
+        "dictn[\"52\"] = \"Bharatwaj\""
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LgfxFKcyT37Z",
+        "outputId": "40f7a995-e20a-4d17-cb40-90c0c9def750"
+      },
+      "source": [
+        "print(dictn)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{'01': 'Aditya', '14': 'Rohan', '33': 'Ashritha', '53': 'Pawan Valluri', '52': 'Bharatwaj'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "CgM5NWXfQNAD"
+      },
+      "source": [
+        "## Write a program using numpy matrices for caluating inp, pinp, matrix_rank, lstsq, svd, transpose, eig, sort, sort, linspace"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KhlfkZsZds7o"
+      },
+      "source": [
+        "import numpy as np\n",
+        "from numpy import linalg"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "suJ5gzARUVPX",
+        "outputId": "2167d01c-6a66-47ba-9030-efffea7a4e7a"
+      },
+      "source": [
+        "matrix_A = np.random.randint(1,100,(4,4))\n",
+        "matrix_A"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "array([[33, 49, 51, 46],\n",
+              "       [39, 89, 34, 57],\n",
+              "       [84, 87, 68, 90],\n",
+              "       [75,  2, 45, 19]])"
+            ]
+          },
+          "execution_count": 149,
+          "metadata": {
+            "tags": []
+          },
+          "output_type": "execute_result"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lFMxFRKnUdu4",
+        "outputId": "b7886b17-e578-4885-9e07-d647cf385a13"
+      },
+      "source": [
+        "inverse = linalg.inv(matrix_A)\n",
+        "print(\"inverse of matrix A:\\n\",inverse)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "inverse of matrix A:\n",
+            " [[-0.02407485  0.0109441   0.0019959   0.01599993]\n",
+            " [ 0.00227287  0.03338113 -0.02413373  0.00867152]\n",
+            " [ 0.04620366 -0.00262345 -0.02350828  0.00736386]\n",
+            " [-0.01463669 -0.04050075  0.05033935 -0.02887954]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gHEaCRHJU55q",
+        "outputId": "17ceeec1-8fed-4384-f311-a694b4fdae4f"
+      },
+      "source": [
+        "pseudo_inverse = linalg.pinv(matrix_A)\n",
+        "print(\"pseudo inverse of matrix A:\\n\", pseudo_inverse)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "pseudo inverse of matrix A:\n",
+            " [[-0.02407485  0.0109441   0.0019959   0.01599993]\n",
+            " [ 0.00227287  0.03338113 -0.02413373  0.00867152]\n",
+            " [ 0.04620366 -0.00262345 -0.02350828  0.00736386]\n",
+            " [-0.01463669 -0.04050075  0.05033935 -0.02887954]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7hVRwnDvVurz",
+        "outputId": "c3e306d5-8d9c-41ec-e736-8347e021778d"
+      },
+      "source": [
+        "matrix_rank = linalg.matrix_rank(matrix_A)\n",
+        "print(\"Rank of matrix A=\", matrix_rank)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Rank of matrix A= 4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bbTug5LMWBnF",
+        "outputId": "98075926-1be1-466a-ab3f-5a8e0f54ac29"
+      },
+      "source": [
+        "m = np.random.randint(1,15,(2,2))\n",
+        "y = np.random.randint(1,15,(2,1))\n",
+        "lstsq = linalg.lstsq(m,y,rcond=None)[0]\n",
+        "print(\"least squred errors of m+X = y equations :\\n\",lstsq)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "least squred errors of m+X = y equations :\n",
+            " [[ 1.57692308]\n",
+            " [-0.73076923]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YIJNizpqZwJj",
+        "outputId": "d680ae9a-63a7-4aef-c9c5-0b430e14fd26"
+      },
+      "source": [
+        "svd = linalg.svd(matrix_A)\n",
+        "print(\"The U, S, V values of singular Value Decomposition of matrix A are:\\n\"\"U:\\n\",svd[0],\"\\n\\nS:\\n\",svd[1],\"\\n\\nV:\\n\",svd[2])"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "The U, S, V values of singular Value Decomposition of matrix A are:\n",
+            "U:\n",
+            " [[-0.38863421 -0.06166118  0.85352848  0.34154135]\n",
+            " [-0.49036477 -0.49935038 -0.47338468  0.5348818 ]\n",
+            " [-0.72162032  0.0178114  -0.05111318 -0.69016977]\n",
+            " [-0.29625996  0.86401959 -0.21162119  0.34773073]] \n",
+            "\n",
+            "S:\n",
+            " [228.90208123  67.33135932  18.92167869  11.41469833] \n",
+            "\n",
+            "V:\n",
+            " [[-0.50145791 -0.55071159 -0.432039   -0.50852632]\n",
+            " [ 0.66518994 -0.65624623  0.29658429 -0.19723332]\n",
+            " [-0.5528399  -0.27367709  0.76294624  0.19334408]\n",
+            " [ 0.02074508  0.43721675  0.37854074 -0.81554771]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "q914WyXtWm6Z",
+        "outputId": "5b61f262-cc98-4fd3-a636-c3b6e5cf4124"
+      },
+      "source": [
+        "transpose = matrix_A.transpose()\n",
+        "print(\"transpose of matrix :\\n\",transpose)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "transpose of matrix :\n",
+            " [[73 65 83  9]\n",
+            " [45 54 40 56]\n",
+            " [51 25 97 11]\n",
+            " [25 60 51 27]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VPyULbnIm-ag",
+        "outputId": "e69b7257-0c1a-4340-9d62-09c0eeb8f426"
+      },
+      "source": [
+        "eigen_values = linalg.eig(matrix_A)\n",
+        "print(\"Eignen Values of matrix A:\\n\",eigen_values[0])"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Eignen Values of matrix A:\n",
+            " [214.51534318 +0.j          32.29845775 +0.j\n",
+            " -18.90690047+11.08973862j -18.90690047-11.08973862j]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "background_save": true
+        },
+        "id": "IS0N8vTubne8",
+        "outputId": "a6e61b93-4514-427f-9907-e734a5c1dccb"
+      },
+      "source": [
+        "matx_A = matrix_A.copy()\n",
+        "print(matx_A)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "[[33 49 51 46]\n",
+            " [39 89 34 57]\n",
+            " [84 87 68 90]\n",
+            " [75  2 45 19]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "IXkD5BUQcjEJ"
+      },
+      "source": [
+        "matx_A.sort(axis = 0)\n",
+        "matx_A"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "r2DdcgjweLhR"
+      },
+      "source": [
+        "linspace = np.linspace(1,20,5)\n",
+        "print(\"10 Values between 1 and 20 are :\",linspace)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Rqy_e2xxjLrH"
+      },
+      "source": [
+        "linalg.pinv()"
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
